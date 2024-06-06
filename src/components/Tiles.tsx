@@ -2,7 +2,6 @@
 type tiles = {
     onClick: ()=> void,
     value:string
-    
 }
 const Tiles = ({onClick,value}:tiles) => {
   return (

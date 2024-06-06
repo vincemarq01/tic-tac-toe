@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 const TicTacToe = () => {
     const [value, setValue] = useState<string[]>([])
     const [player, setPlayer] = useState("X")
-    const [winner, setWinner] = useState<string>('');
+    const [winner, setWinner] = useState<string | null>(null);
     
     const checkwinner=()=>{
         const winnercode = [
@@ -21,7 +21,7 @@ const TicTacToe = () => {
 
         for(let i=0; i<winnercode.length; i++){
             const [a,b,c] = winnercode[i];
-            console.log(a,b,c);
+          
             if(value[a] !== null && value[a] === value[b] && value[a] === value[c]){
             return value[a]
             }
@@ -36,28 +36,39 @@ const TicTacToe = () => {
         }
         const tilesnumber = [...value];
         tilesnumber[index] = player;
+        console.log(tilesnumber);
         setValue(tilesnumber);
         setPlayer(player === "X"?"O":"X")
        
         console.log( tilesnumber[index] , index);
     }
+    const reset = ()=>{
+        setValue([]);
+        setWinner("");
+    }
+    
 
     useEffect(()=>{
         const newWinner = checkwinner();
         if(newWinner){
             setWinner(newWinner)
+            console.log(newWinner,"newWinner")
         }
+      
     
-    },[value])
+    },[value,winner])
 
   
   return (
     <div className='grid grid-rows align-center h-screen bg-emerald-800'>
     <div className='h-[150px]'>
-    {winner ? <h1 className='text-9xl mb-[100px] text-bold text-center text-teal-300'>Winner</h1> :<h1></h1>}
+    {winner ? <h1 className='text-9xl mb-[100px] text-bold text-center text-teal-300'>Winner {winner} <p className='text-xl cursor-pointer underline ' onClick={() => reset()}>Play Again?</p></h1> : <h1></h1>}
+    
     </div>
     <div>
+  
     <Board onClick={handleClick} value={value}/>
+
     </div>
     </div>
   

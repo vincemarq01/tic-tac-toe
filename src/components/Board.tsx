@@ -1,6 +1,6 @@
 
 import Tiles from "./Tiles"
-interface Boards{
+type Boards ={
     onClick:(index:number)=>void,
     value: string[]
 }
