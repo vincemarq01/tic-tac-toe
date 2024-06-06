@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.gridBox{
+border: 2px solid black;
+outline-style: solid;
+height: 150px;
+}
