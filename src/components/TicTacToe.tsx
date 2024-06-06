@@ -31,10 +31,14 @@ const TicTacToe = () => {
  
 
     const handleClick = (index:number)=>{
+        if(value[index]){
+            return;
+        }
         const tilesnumber = [...value];
         tilesnumber[index] = player;
         setValue(tilesnumber);
         setPlayer(player === "X"?"O":"X")
+       
         console.log( tilesnumber[index] , index);
     }
 
@@ -50,7 +54,7 @@ const TicTacToe = () => {
   return (
     <div className='grid grid-rows align-center h-screen bg-emerald-800'>
     <div className='h-[150px]'>
-    {winner ? <h1 className='text-9xl mb-[100px] text-bold text-center text-white'>Winner</h1> :<h1></h1>}
+    {winner ? <h1 className='text-9xl mb-[100px] text-bold text-center text-teal-300'>Winner</h1> :<h1></h1>}
     </div>
     <div>
     <Board onClick={handleClick} value={value}/>
