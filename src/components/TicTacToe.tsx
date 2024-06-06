@@ -48,9 +48,13 @@ const TicTacToe = () => {
 
   
   return (
+    <div className='grid grid-rows align-center h-screen bg-emerald-800'>
+    <div className='h-[150px]'>
+    {winner ? <h1 className='text-9xl mb-[100px] text-bold text-center text-white'>Winner</h1> :<h1></h1>}
+    </div>
     <div>
-      <Board onClick={handleClick} value={value}/>
-     {winner ? <h1 className='text-9xl'>winner</h1> :<h1>r</h1>}
+    <Board onClick={handleClick} value={value}/>
+    </div>
     </div>
   
   )

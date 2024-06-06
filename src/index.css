@@ -13,3 +13,14 @@ height: 150px;
     pointer-events: none;
     opacity: 0.5;
   }
+
+.strike{
+    position: absolute;
+    background-color: darkorange;
+}
+.strike-row-1{
+    width: 10%;
+    height: 4px;
+    top:35%;
+
+}
