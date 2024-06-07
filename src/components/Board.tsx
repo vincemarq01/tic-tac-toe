@@ -1,4 +1,3 @@
-
 import Tiles from "./Tiles"
 type Boards ={
     onClick:(index:number)=>void,
@@ -8,8 +7,10 @@ type Boards ={
 const Board = ({onClick, value}:Boards) => {
   return (
 
-<div className='max-w-[500px] max-h-[530px] mx-auto h-screen align-center p-5 rounded-lg bg-emerald-600'>
-<div className="grid grid-cols-3 gap-5">
+
+<div className='h-[350px] w-[350px] md:w-[500px] md:h-[530px] mx-auto '>
+<div className="grid grid-cols-3 md:grid grid-cols-3 gap-5 bg-emerald-600 p-2 rounded-lg">
+{/* <div className="flex flex-col w-[50px]"> */}
     <Tiles onClick={()=> onClick(0)} value={value[0]}/>
     <Tiles onClick={()=> onClick(1)} value={value[1]}/>
     <Tiles onClick={()=> onClick(2)} value={value[2]}/>

@@ -60,17 +60,18 @@ const TicTacToe = () => {
 
   
   return (
-    <div className='grid grid-rows align-center h-screen bg-emerald-800'>
-    <div className='h-[150px]'>
-    {winner ? <h1 className='text-9xl mb-[100px] text-bold text-center text-teal-300'>Winner {winner} <p className='text-xl cursor-pointer underline ' onClick={() => reset()}>Play Again?</p></h1> : <h1></h1>}
-    
-    </div>
-    <div>
-  
-    <Board onClick={handleClick} value={value}/>
 
-    </div>
-    </div>
+    <div className='grid grid-rows-3 h-screen  bg-emerald-800'>
+     {winner ? <h1 className='text-2xl lg:text-9xl mb-[100px] text-bold text-center text-teal-300 pt-5'>Winner {winner} <p className='text-xl cursor-pointer underline ' onClick={() => reset()}>Play Again?</p></h1> : <h1></h1>}
+        <div className=''>
+        <Board onClick={handleClick} value={value} />
+        </div>
+      </div>
+
+    
+  
+   
+  
   
   )
 }

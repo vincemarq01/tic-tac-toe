@@ -6,7 +6,7 @@ type tiles = {
 const Tiles = ({onClick,value}:tiles) => {
   return (
     <div>
-    <div className=' gridBox text-9xl text-center rounded-lg text-teal-300'  onClick={onClick}>{value} </div>
+    <div className='flex justify-center gridBox h-[93px] text-7xl md:h-[150px] md:text-9xl  rounded-lg text-teal-300'  onClick={onClick}>{value} </div>
 
     </div>
   )
